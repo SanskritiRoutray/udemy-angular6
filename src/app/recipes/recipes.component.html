@@ -1,8 +1,12 @@
 <div class="row">
   <div class="col-xs-5">
-    <app-recipe-list></app-recipe-list>
-  </div>
+      <app-recipe-list></app-recipe-list>
+    </div>
   <div class="col-xs-7">
-    <app-recipe-detail></app-recipe-detail>
+    
+    <app-recipe-detail [itemInDetail]="selectedInParent" *ngIf="selectedInParent; else noItemTemp"></app-recipe-detail>
+    <ng-template #noItemTemp>
+        Please select a recipe
+      </ng-template>
   </div>
 </div>
